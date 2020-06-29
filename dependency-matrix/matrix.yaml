@@ -1,0 +1,7 @@
+dependencies:
+- host: github.com
+  owner: vamsikrishnak123
+  repo: testxyz
+  url: https://github.com/vamsikrishnak123/testxyz.git
+  version: ""
+  versionURL: ""
