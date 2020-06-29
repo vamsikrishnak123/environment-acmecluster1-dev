@@ -1,39 +1,87 @@
 autoUpdate:
   enabled: false
   schedule: ""
+bootConfigURL: https://github.com/cloudbees/cloudbees-jenkins-x-boot-config.git
 cluster:
-  clusterName: ""
-  environmentGitOwner: ""
+  clusterName: acmecluster1
+  devEnvApprovers:
+  - vamsikrishnak123
+  environmentGitOwner: vamsikrishnak123
   environmentGitPublic: true
-  project: ""
-  azure: {}
-  provider: gke
-  zone: ""
-gitops: true
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  provider: eks
+  region: us-west-2
+  registry: docker.io
 environments:
-  - key: dev
-  - key: staging
-  - key: production
+- ingress:
+    domain: 52.39.125.166.nip.io
+    externalDNS: false
+    ignoreLoadBalancer: true
+    namespaceSubDomain: -jx.
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: dev
+  repository: environment-acmecluster1-dev
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: staging
+  repository: environment-acmecluster1-staging
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: production
+  repository: environment-acmecluster1-production
+gitops: true
 ingress:
-  domain: ""
+  domain: 52.39.125.166.nip.io
   externalDNS: false
+  ignoreLoadBalancer: true
+  namespaceSubDomain: -jx.
   tls:
     email: ""
     enabled: false
     production: false
 kaniko: true
+repository: nexus
 secretStorage: vault
 storage:
+  backup:
+    enabled: false
+    url: ""
   logs:
     enabled: true
-    url: ""
+    url: s3://acmecluster1-logs-9760dfff-9e48-45eb-b93d-6b3a2a332f66
   reports:
     enabled: true
-    url: ""
+    url: s3://acmecluster1-reports-dbe527a8-8e82-4370-828a-fcb65e7e01aa
   repository:
     enabled: true
-    url: ""
+    url: s3://acmecluster1-repository-f6779d38-67dd-4307-a9c0-8cade3d1f812
+vault:
+  aws:
+    autoCreate: true
+    iamUserName: Vault_user3
+  disableURLDiscovery: true
+velero:
+  schedule: ""
+  ttl: ""
 versionStream:
-  ref: 2.1.78+cjxd.11
+  ref: v0.0.36
   url: https://github.com/cloudbees/cloudbees-jenkins-x-versions.git
 webhook: lighthouse
