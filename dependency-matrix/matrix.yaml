@@ -7,7 +7,7 @@ dependencies:
   versionURL: ""
 - host: github.com
   owner: vamsikrishnak123
-  repo: php-helloworld
-  url: https://github.com/vamsikrishnak123/php-helloworld.git
+  repo: jx-canary
+  url: https://github.com/vamsikrishnak123/jx-canary.git
   version: ""
   versionURL: ""
