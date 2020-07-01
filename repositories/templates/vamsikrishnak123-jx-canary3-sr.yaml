@@ -1,0 +1,21 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: vamsikrishnak123
+    provider: github
+    repository: jx-canary3
+  name: vamsikrishnak123-jx-canary3
+spec:
+  description: Imported application for vamsikrishnak123/jx-canary3
+  httpCloneURL: https://github.com/vamsikrishnak123/jx-canary3.git
+  org: vamsikrishnak123
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: jx-canary3
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/vamsikrishnak123/jx-canary3.git

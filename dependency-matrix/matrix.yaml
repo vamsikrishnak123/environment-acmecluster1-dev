@@ -5,3 +5,9 @@ dependencies:
   url: https://github.com/vamsikrishnak123/testxyz.git
   version: ""
   versionURL: ""
+- host: github.com
+  owner: vamsikrishnak123
+  repo: jx-canary4
+  url: https://github.com/vamsikrishnak123/jx-canary4.git
+  version: ""
+  versionURL: ""
